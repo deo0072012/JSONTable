@@ -1,0 +1,45 @@
+<h2 align="center"> JSON ANGULAR MATERIAL TABLE</h2>
+<table mat-table [dataSource]="datasource" class="mat-elevation-z8">
+
+  
+  
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- TYPE Column -->
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef> TYPE </th>
+      <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+    </ng-container>
+  
+    <!--REGION Column -->
+    <ng-container matColumnDef="region">
+      <th mat-header-cell *matHeaderCellDef> REGION</th>
+      <td mat-cell *matCellDef="let element"> {{element.region}} </td>
+    </ng-container>
+  
+    <!-- DETAILS Column -->
+    <ng-container matColumnDef="details">
+      <th mat-header-cell *matHeaderCellDef > DETAILS</th>
+      <td mat-cell *matCellDef="let element"> {{element.details | json}}</td>       
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+   <!-- 
+
+
+     <button mat-raised-button [hidden]="isShow" click="change()">Show Details </button>
+    <div [hidden]="isShow">
+        <input type="button" (click)="toggleDisplay()" value="Get Details"> 
+      
+    </div> 
+    <input type="button" (click)="getdetails()" value="Get Details"> 
+      <button mat-raised-button
+      matTooltip={{det}}>
+       <button (click)= "toggleDisplay()">Show Details</button>
+      </button>-->
